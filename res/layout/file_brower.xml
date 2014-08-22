@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/file_browse_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- path -->
+
+    <LinearLayout
+        android:id="@+id/navigation_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_vertical"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <LinearLayout
+            android:id="@+id/current_path_pane"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            
+            android:gravity="center_vertical"
+            android:maxWidth="300dip" >
+
+            <TextView
+                android:id="@+id/current_path_view"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="start"
+                android:paddingLeft="10dip"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- end path -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/file_path_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fastScrollEnabled="true"
+            android:footerDividersEnabled="true"
+            android:headerDividersEnabled="true" />
+
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/empty_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@string/no_file"
+                android:textSize="27px" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sd_not_available_page"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25px"
+                android:src="@drawable/sd_not_available" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/enable_sd_card"
+                android:textSize="22px" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

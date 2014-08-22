@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        
+        android:id="@+id/action_open_file"
+        android:orderInCategory="100" 
+        android:showAsAction="always"
+        android:title="@string/action_open_file"/>
+    <item
+        
+        android:id="@+id/action_bg_color"
+        android:orderInCategory="100" 
+        android:showAsAction="always"
+        android:title="@string/action_bg_color"/>
+    <!-- 
+    <item
+        android:id="@+id/action_font_size"
+        android:title="@string/action_font_size"/> -->
+    
+
+</menu>

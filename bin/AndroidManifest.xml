@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.harry.ireader"
+    android:versionCode="1"
+    android:versionName="1.0.4" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <!-- 用于单元测试的目标包 -->
+    <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.harry.ireader" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- 用于单元测试 -->
+        <uses-library android:name="android.test.runner" />
+
+        <!-- 在使用singleTask时要指定android:taskAffinity属性 -->
+        <activity
+            android:name="com.harry.ireader.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.DeviceDefault"
+            android:launchMode="singleTask"
+            android:taskAffinity="com.harry.ireader.task" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+            <!-- 用来接收外部应用发送的android.intent.action.VIEW -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 只打开text -->
+                <data android:mimeType="text/plain" 
+                    android:scheme="file"/>
+            </intent-filter>
+
+        </activity>
+        
+        
+        <!-- 分页Service -->
+        <service android:name="com.harry.service.PagingService"/>
+        
+        <activity
+            android:name="com.harry.style.ColorListActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog" />
+        <activity
+            android:name="com.harry.style.FontListActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog" />
+        
+        
+        
+        <!-- 以下为文件夹浏览 -->
+        <activity android:name="com.harry.ireader.FileBrowerActivity"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog"/>
+
+    </application>
+
+</manifest>

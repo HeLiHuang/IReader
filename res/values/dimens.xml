@@ -1,0 +1,22 @@
+<resources>
+    <!-- 页眉页脚字体大小 -->
+    <dimen name="header_footer_font_size">16dp</dimen>
+    <dimen name="text_font_size">32dp</dimen>
+    
+    <!-- 页面边距 -->
+    <dimen name="left_margin">20dp</dimen>
+    <dimen name="top_margin">25dp</dimen>
+    <dimen name="right_margin">20dp</dimen>
+    <dimen name="bottom_margin">30dp</dimen>
+    
+    <!-- 行间距 -->
+    <dimen name="line_space">10dp</dimen>
+    
+    <!-- 段后距 -->
+    <dimen name="para_after_space">20dp</dimen>
+    
+    <!-- 阴影宽度 -->
+    <dimen name="shadow_width">15dp</dimen>
+    <!-- 电池宽度 -->
+    <dimen name="battery_width">32dp</dimen>
+</resources>
